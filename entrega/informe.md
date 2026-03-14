@@ -20,10 +20,10 @@ Nuestro proceso de desarrollo se realizó de manera progresiva, tomando como bas
 - Auditoría y trazabilidad: Como ajuste final para asegurar un registro adecuado de la información financiera, se incluyó una base de datos NoSQL. Esta herramienta se utiliza para guardar el historial, los logs de transacciones y facilitar auditorías, garantizando que el sistema sea más profesional y seguro de cara al futuro.
 
 ## 🧩 Análisis del modelo propuesto
-Incluya un análisis sobre:
-- Cómo se estructura el modelo entregado
-- Cómo representa las necesidades del cliente
-- Qué supuestos se tomaron
+
+El cliente necesitaba una migracion limpia a un modelo que descontinuara el uso constante de hojas de calculo para el registro de datos de ventas y clientes, para ello lo principal era usar una herramienta mejor estructurada, que en este caso mayormente es usando los servicios de AWS en nuestra propuesta para THEGEEKHUB, tomar las hojas de calculo ya existentes y clasificar sus datos en las bases de datos relacionales y no relacionales. Para esta tarea se representa en el diagrama un API gateway que comunica los datos de las hojas de calculo y las futuras ventas por redes sociales. El API Gateway actua como un intermediario con los servicios de ventas y referencias. Posteriormente este servicio da paso al de tracking financiero que esta vinculado a una base de datos no relacional, por otro lado la base de datos relacional de los servicios de ventas se encargan de alamacenar la informacion de clientes e inventario.
+
+Ajustando el modelo al propuesto garantiza llevar un mejor control de las ventas y que los datos que guarden una relacion directa entre si se vinculen de forma adecuada, de igual manera y aunque nuestra sugerencia es el uso de la cloud de AWS el cliente podria pedir que esta misma estructura se ajuste bien sea a otro servicio cloud o algun servicio on premise como puede ser el uso de mongodb para las bases de datos no relacionales, dado que estas solo se encargan de guardar logs e historicos que sirven para analisis de ventas y realizar auditorias.
 
 ## 📈 Diagrama final entregado
 ![Albiononline](./Diagrama_final_taller_4.jpeg)
