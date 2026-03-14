@@ -25,26 +25,38 @@ El cliente necesitaba una migracion limpia a un modelo que descontinuara el uso 
 
 Ajustando el modelo al propuesto garantiza llevar un mejor control de las ventas y que los datos que guarden una relacion directa entre si se vinculen de forma adecuada, de igual manera y aunque nuestra sugerencia es el uso de la cloud de AWS el cliente podria pedir que esta misma estructura se ajuste bien sea a otro servicio cloud o algun servicio on premise como puede ser el uso de mongodb para las bases de datos no relacionales, dado que estas solo se encargan de guardar logs e historicos que sirven para analisis de ventas y realizar auditorias.
 
+Como supuestos para el modelo se tomo que se requerira de una escalabilidad Vertical dado que el sistema asume que el volumen de transacciones crecerá, por lo que se incluyen réplicas de lectura para no saturar la base de datos principal durante consultas de inventario. Tambien la inclusion de seguridad por capas dado que usar un Gateway, se asume que las credenciales de las APIs externas (MercadoPago) están protegidas y no expuestas directamente al cliente final.
+
 ## 📈 Diagrama final entregado
 ![Albiononline](./Diagrama_final_taller_4.jpeg)
 
 ## 📋 Tabla de actores, entidades o componentes (si aplica)
 
-| Nombre del elemento | Tipo | Descripción | Responsable |
-|---------------------|------|-------------|-------------|
-| Ej: Paciente        | Actor | Usuario que agenda una cita médica | Cliente |
+| Nombre del elemento | Tipo | Descripción |
+|---------------------|------|-------------|
+| API Gateway         | Componente | Punto de entrada que autentica y enruta las peticiones de ventas y socios.       |
+| Messaging Queue           | Infraestructura | Cola que organiza las órdenes de compra para ser procesadas sin pérdida de datos.            |
+| Relational DB         | Persistencia | Base de datos principal que asegura la consistencia de Ventas y Compradores.      |
+| NoSQL DB         | Persistencia | Almacenamiento de alta velocidad para auditoría y logs de transacciones financieras. | 
+| Read Replicas        | Desempeño | Copias de la base de datos para agilizar la consulta de precios y stock por parte de los socios.         |
 
 ## 🔍 Investigación complementaria
 ### Tema investigado:
-(Ej: Buenas prácticas BPMN, comparación TOGAF vs C4, principios de seguridad STRIDE, etc.)
+Tema investigado: Persistencia Políglota en Arquitecturas de Microservicios
 
 ### Resumen:
-Describa en 2–3 párrafos lo investigado, citando fuentes cuando sea necesario. Incluya cómo se relaciona con el taller.
+En el desarrollo de sistemas modernos, el concepto de Persistencia Políglota [1] se refiere a la práctica de utilizar diferentes tecnologías de bases de datos para resolver distintos problemas de almacenamiento dentro de una misma aplicación. Para THEGEEKHUB, esta investigación justifica la coexistencia de:
+
+Bases de Datos Relacionales (SQL): Ideales para el modelo de entidades donde las relaciones (Comprador-Venta-Referencia) deben cumplir con las propiedades ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad). Esto garantiza que no se venda un producto sin stock.
+
+Bases de Datos No Relacionales (NoSQL): Según autores como Martin Fowler, estas son esenciales para manejar datos "ruidosos" o semi-estructurados. En este proyecto, se aplican para registrar los estados de las transferencias entre Nequi y MercadoPago, donde la velocidad de escritura es prioritaria sobre la complejidad de las relaciones.
+
+Esta estrategia no solo mejora el rendimiento, sino que prepara a THEGEEKHUB para una futura migración a la nube (AWS o Azure), donde este tipo de arquitecturas son el estándar de la industria.
 
 ## 📚 Referencias
-- [1] Apellido, Nombre. *Título*. Año. URL o DOI.
-- [2] Fuente oficial BPMN: https://www.omg.org/spec/BPMN/
-
+NGINX. (s.f.). What is an API Gateway?. NGINX Documentation. https://www.nginx.com/resources/glossary/api-gateway/
+Oracle. (s.f.). SQL vs. NoSQL: What’s the Difference?. Oracle Resources. https://www.oracle.com/database/technologies/nosql-databases.html
+Fowler, M. (2011, 16 de noviembre). Polyglot Persistence. MartinFowler.com. https://martinfowler.com/bliki/PolyglotPersistence.html
 ---
 
 _Este documento hace parte de la entrega del taller X del curso AREM (Arquitectura Empresarial) - Universidad de La Sabana._
