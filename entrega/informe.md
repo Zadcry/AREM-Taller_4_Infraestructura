@@ -1,12 +1,12 @@
 # 📄 Informe Técnico del Taller
 
 ## 🔖 Nombre del Taller
-_Taller X - [Nombre completo del taller]_
+_Taller 4: Mapa de Infraestructura y Diagnóstico Técnico_
 
 ## 👥 Integrantes del equipo
-- Nombre 1 (correo o usuario GitHub)
-- Nombre 2
-- Nombre 3
+- Julián Mauricio Zafra (julianzamo@unisabana.edu.co)
+- Santiago Araque (santiagoaral@unisabana.edu.co)
+- Juan José Forero (juanfope@unisabana.edu.co)
 
 ## 🧠 Descripción general del trabajo
 Describa brevemente el objetivo del taller y cómo se desarrolló la actividad.
