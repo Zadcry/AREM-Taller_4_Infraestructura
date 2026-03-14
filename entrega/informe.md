@@ -26,7 +26,7 @@ Incluya un análisis sobre:
 - Qué supuestos se tomaron
 
 ## 📈 Diagrama final entregado
-![Albiononline](entrega/Diagrama_final_taller_4.jpeg)
+![Albiononline](./Diagrama_final_taller_4.jpeg)
 
 ## 📋 Tabla de actores, entidades o componentes (si aplica)
 
