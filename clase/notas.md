@@ -18,10 +18,8 @@ Durante la sesión se diseñó colaborativamente la arquitectura de un sistema d
 - **Alcance logrado:** Se completó el diagrama de despliegue en draw.io incluyendo clientes, CDN, balanceador de carga, API Gateway, microservicios, bases de datos relacionales y NoSQL con sus réplicas/nodos.
  
 ## 🧩 Boceto inicial del modelo
- 
-> Diagrama de despliegue elaborado en draw.io durante la sesión:
- 
-![Diagrama de despliegue - Sistema de rastreo de paquetes](WhatsApp_Image_2026-03-07_at_12_39_55_PM__2_.jpeg)
+
+
  
 **Componentes modelados en el diagrama:**
  
@@ -42,11 +40,9 @@ Durante la sesión se diseñó colaborativamente la arquitectura de un sistema d
  
 | Tarea asignada | Responsable | Fecha estimada |
 |----------------|-------------|----------------|
-| Modelado final y ajustes del diagrama en draw.io | Nombre 1 | 15/03 |
-| Revisión y validación del diagrama contra requisitos | Nombre 2 | 15/03 |
-| Redacción del informe técnico y justificación de decisiones | Nombre 3 | 16/03 |
-| Investigación sobre tecnologías usadas (Kafka, NoSQL, CDN) | Nombre 1 | 16/03 |
-| Preparación de la presentación final del taller | Todos | 17/03 |
+| Modelado final y ajustes del diagrama en draw.io | Santiago Andrés Araque Alfonso | 07/03 |
+| Revisión y validación del diagrama contra requisitos | Julian Mauricio Zafra Moreno | 07/03 |
+| Redacción del informe técnico y justificación de decisiones | Juan Jose Forero Peña | 12/03 |
  
 ---
  
