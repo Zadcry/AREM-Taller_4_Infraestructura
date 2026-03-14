@@ -18,7 +18,7 @@ Durante la sesión se diseñó colaborativamente la arquitectura de un sistema d
 - **Alcance logrado:** Se completó el diagrama de despliegue en draw.io incluyendo clientes, CDN, balanceador de carga, API Gateway, microservicios, bases de datos relacionales y NoSQL con sus réplicas/nodos.
  
 ## 🧩 Boceto inicial del modelo
-
+![borrador](./mapa-borrador.jpeg)
 
  
 **Componentes modelados en el diagrama:**
