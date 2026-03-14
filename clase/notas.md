@@ -42,7 +42,7 @@ Durante la sesión se diseñó colaborativamente la arquitectura de un sistema d
 |----------------|-------------|----------------|
 | Modelado final y ajustes del diagrama en draw.io | Santiago Andrés Araque Alfonso | 07/03 |
 | Revisión y validación del diagrama contra requisitos | Julian Mauricio Zafra Moreno | 07/03 |
-| Redacción del informe técnico y justificación de decisiones | Juan Jose Forero Peña | 12/03 |
+| Redacción del informe técnico y Referencias | Juan Jose Forero Peña | 12/03 |
  
 ---
  
